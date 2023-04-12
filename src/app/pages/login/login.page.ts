@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { ToastController } from '@ionic/angular';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,7 @@ export class LoginPage implements OnInit {
   //ionicForm: any =  FormGroup;
   defaultDate = "1987-06-30";
   isSubmitted = false;
-  constructor(public formBuilder: FormBuilder, private toastController: ToastController) {
+  constructor(public formBuilder: FormBuilder, private toastController: ToastController, private router: Router) {
     this.data = {
       email: '',
       phone: '',
@@ -86,6 +87,7 @@ export class LoginPage implements OnInit {
  }
   submitForm(myForm: NgForm) {
     this.isSubmitted = true;
+    this.router.navigate(['/dashboard']);
     console.log('onSubmit');
     //console.log(myForm);
     console.log(this.data)
