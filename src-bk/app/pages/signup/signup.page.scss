@@ -1,0 +1,145 @@
+ion-content {
+    --ion-background-color:transparent;
+}
+
+.bg-color {
+    background:#E1EAF9;
+}
+
+ion-header{
+    position: absolute;
+    z-index: 2;
+}
+
+ion-back-button {
+    color:#E1EAF9;
+}
+
+ion-card-content {
+    padding-top: 30px;
+}
+
+ion-card {
+    --ion-background-color:transparent;
+    background-color: transparent;
+    box-shadow: none !important;
+    margin: 0px !important;
+    box-shadow: none;
+}
+
+ion-card-title {
+    margin-top: 50px !important;
+    font-size: 25px;
+    color: #53565A;
+    text-align: center;
+    font-weight: 600;
+}
+
+ion-card-subtitle {
+    text-align: center;
+    padding-top: 15px !important;
+    font-size: 13px;
+    color: #888C91;
+    font-weight: 400;
+    text-transform: none;
+    padding: 0 30px;
+}
+
+ion-item {
+    color: #74787E;
+    --ion-item-background:#E1EAF9;
+    --border-color: #D4D7DB;
+    --highlight-color-focused: #215AB7;
+    --padding-start: 0;
+    --inner-padding-end: 0;
+    ion-input {
+        color:#647890;
+    }
+    ion-icon {
+        padding-right: 6px;
+        font-size: 18px;
+    }
+    ion-input:hover {
+        color:#124BAD;
+    }
+}
+
+.signbtn-wrap {
+    text-align: center;
+    padding-top: 30px;
+
+    ion-button{
+        width: 45%;
+    }
+    .signpbtn {
+        --ion-color-primary:#215AB7;
+        --ion-primry-color:#215AB7;
+        --background-activated:#E1EAF9;
+        --background-focused:#E1EAF9;
+        --background-hoaver:#647890;
+        color: #F4F6FA;
+        border-radius: 25;
+        background-color: #215A87;
+    }
+}
+
+.text-tag {
+    margin-top: 48px;
+    text-align: center;
+    span{
+        font-size: 13px;
+        font-weight: normal;
+        color: #898585;
+    }
+}
+
+.social-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    ion-img{
+        height: 30px;
+        width:30px
+    }
+}
+
+
+ion-modal {
+    &.bottom-end {
+      align-items: flex-end;
+      --height: auto;
+      .ion-page {
+        position: relative;
+        display: block;
+        contain: content;
+      }
+    }
+  }
+
+  ion-note{
+    width: 100%;
+    padding-left: 25px;
+    position: absolute;
+    top: 12px;
+  }
+
+  ion-card .list-ios{
+    background-color: transparent;
+  }
+
+  .register-form .error {
+    display: block;
+    padding: 5px 0;
+  }
+
+  ion-intl-tel-input {
+    ::ng-deep .ionic-selectable-has-placeholder div.ionic-selectable-value-item 
+    {
+      content: "";
+      display: inline-block;
+      width: 23px;
+      background-color: var(--placeholder-color, #999);
+      height: 18px;
+      font-size: 0px;
+    }
+  }

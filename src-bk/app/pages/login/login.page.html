@@ -1,0 +1,107 @@
+<ion-header class="ion-no-border">
+  <!-- <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar> -->
+  <ion-buttons slot="start">
+    <ion-back-button defaultHref="home" text=""> </ion-back-button>
+  </ion-buttons>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card class="ion-no-margin">
+      <ion-img src="./assets/images/header1.png"></ion-img>
+  </ion-card>
+  <ion-card-content>
+    <form #f="ngForm" novalidate (ngSubmit)="submitForm(f)">
+    <div class="wrapform">
+        <ion-item>
+            <ion-input type="email" name="email" required="true" [(ngModel)]="data.email" #emailCtrl="ngModel" placeholder="Email" email>
+              <ion-icon name="mail-outline"></ion-icon>
+            </ion-input>
+        </ion-item>
+        <ion-item *ngIf="!emailCtrl.valid && emailCtrl.touched">
+          <ion-text color="danger">Email is not valid</ion-text>
+        </ion-item>
+        <!-- <span class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.required">
+          Email is required.
+        </span>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.pattern">
+          Please provide valid email id.
+        </span> 
+        <ion-item>
+          <ion-input type="password" formControlName="password" required placeholder="**********">
+            <ion-icon name="lock-closed-outline"></ion-icon>
+          </ion-input>
+      </ion-item>
+      <span class="error ion-padding" *ngIf="isSubmitted && errorControl.password.errors?.required">
+        Password is required.
+      </span>
+      <span class="error ion-padding" *ngIf="isSubmitted && errorControl.password.errors?.minlength">
+        Password should be min 5 chars long.
+      </span>
+    </div>
+   
+    <ion-row >
+      <ion-col>
+       <ion-input class="x" #otp1 required="true" maxLength="1" (keyup)="otpController($event,otp2,'')">
+       </ion-input>
+      </ion-col>
+    <ion-col>
+       <ion-input class="x" #otp2 required="true" maxLength="1" (keyup)="otpController($event,otp3,otp1)">
+       </ion-input>
+      </ion-col>
+
+    <ion-col>
+       <ion-input class="x" #otp3 required="true" maxLength="1"  (keyup)="otpController($event,otp4,otp2)">
+       </ion-input>
+      </ion-col>
+  
+    <ion-col>
+       <ion-input class="x" #otp4 required="true" maxLength="1"  (keyup)="otpController($event,otp5,otp3)">
+      </ion-input>
+    </ion-col>
+  
+  <ion-col>
+      <ion-input class="x" #otp5  required="true" maxLength="1" (keyup)="otpController($event,otp6,otp4)">
+      </ion-input>
+    </ion-col>
+  
+  <ion-col>
+      <ion-input class="x" #otp6  required="true" maxLength="1" (keyup)="otpController($event,'',otp5)">
+      </ion-input>
+  
+      </ion-col>
+    </ion-row>
+     -->
+    <div class="password_forgot">
+        <ion-button fill="clear" class="ion-no-pedding" >Login with email!</ion-button>
+        <ion-button fill="clear" class="ion-no-pedding">Login with mobile number!</ion-button>
+    </div>
+    <div class="signbtn-wrap">
+        <ion-button type="submit" shape="round" fill="solid" class="signbtn" [disabled]="!f.valid">
+              Login
+        </ion-button>
+    </div>
+    </div>
+    </form>
+    <div class="text-tag">
+      <span> Or via social media</span>
+    </div>
+
+    <div class="social-btns">
+      <ion-button fill="clear" class="facebookbtn ion-no-pedding">
+          <ion-img src="./assets/images/facebook.png"> </ion-img>
+      </ion-button>
+      <ion-button fill="clear" class="googlebtn ion-no-pedding">
+        <ion-img src="./assets/images/google.png"> </ion-img>
+    </ion-button>
+    <ion-button fill="clear" class="applebtn ion-no-pedding">
+      <ion-img src="./assets/images/apple.png"> </ion-img>
+  </ion-button>
+  </div>
+  </ion-card-content>
+  <div class="ion-card-footer">
+    <span>Don't have account?</span><button [routerLink]="['/signup']" class="ion-no-pedding">Sign UP</button>
+</div>
+</ion-content>
+

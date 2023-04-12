@@ -1,0 +1,148 @@
+<ion-header class="ion-no-border">
+  <!-- <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar> -->
+  <ion-buttons slot="start">
+    <ion-back-button defaultHref="home" text=""> </ion-back-button>
+  </ion-buttons>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card class="ion-no-margin">
+      <ion-img src="./assets/images/header.png"></ion-img>
+  </ion-card>
+  <ion-card-content>
+    <form #f="ngForm" novalidate (ngSubmit)="submitForm(f)">
+    <div class="wrapform">
+      <div *ngIf="loginWith === 'email'">
+        <h3>Enter Email <ion-icon *ngIf="isNext" name="create-outline" (click)="isNext = false"></ion-icon></h3>
+        <ion-item>
+            <ion-input type="email" name="email" required="true" [(ngModel)]="data.email" #emailCtrl="ngModel" placeholder="Email" email [disabled]="isNext">
+              <ion-icon name="mail-outline"></ion-icon>
+            </ion-input>
+        </ion-item>
+        <ion-item *ngIf="!emailCtrl.valid && emailCtrl.touched && !isNext">
+          <ion-text color="danger">Email is not valid</ion-text>
+        </ion-item>
+        </div>
+        <div *ngIf="loginWith === 'phone'">
+          <h3>Phone Number <ion-icon *ngIf="isNext" name="create-outline" (click)="isNext = false"></ion-icon></h3>
+          <ion-row class="ion-no-pedding">
+            <ion-col size="2" class="ion-no-pedding">
+              <ion-item>
+                <ion-img src="./assets/images/india.png">+91 </ion-img>
+                <ion-note slot="end">&nbsp;+91</ion-note>
+            </ion-item>
+          </ion-col>
+          <ion-col size="10" class="ion-no-pedding">
+            <ion-item>
+              <ion-input type="tel" name="phone" required="true" [(ngModel)]="data.phone" #phoneCtrl="ngModel" placeholder="Enter Number" maxlength="10" minlength="10" phone [disabled]="isNext">
+                <ion-icon name="call-outline"></ion-icon>
+              </ion-input>
+          </ion-item>
+          </ion-col>
+          </ion-row>
+      <ion-item *ngIf="!phoneCtrl.valid && phoneCtrl.touched && !isNext">
+        <ion-text color="danger">Phone Number is 10 digit only</ion-text>
+      </ion-item>
+    </div>
+        <!-- <span class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.required">
+          Email is required.
+        </span>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.pattern">
+          Please provide valid email id.
+        </span> 
+        <ion-item>
+          <ion-input type="password" formControlName="password" required placeholder="**********">
+            <ion-icon name="lock-closed-outline"></ion-icon>
+          </ion-input>
+      </ion-item>
+      <span class="error ion-padding" *ngIf="isSubmitted && errorControl.password.errors?.required">
+        Password is required.
+      </span>
+      <span class="error ion-padding" *ngIf="isSubmitted && errorControl.password.errors?.minlength">
+        Password should be min 5 chars long.
+      </span>
+    </div> -->
+   <div *ngIf="isNext" class="otp-wraper">
+    <h3>Verification code</h3>
+    <p>
+      <ion-text *ngIf="loginWith === 'phone'">We have sent the verification code to your mobile number</ion-text>
+      <ion-text *ngIf="loginWith === 'email'">We have sent the verification code to your email address</ion-text>
+    </p>
+    <ion-row >
+      <ion-col>
+       <ion-input type="tel" class="x" #otp1 name="otp1" #otp1Ctrl="ngModel" required="true" [(ngModel)]="data.otp.otp1" maxLength="1" (keyup)="otpController($event,otp2,'')">
+       </ion-input>
+      </ion-col>
+    <ion-col>
+       <ion-input type="tel" class="x" #otp2 name="otp2" #otp2Ctrl="ngModel" required="true" [(ngModel)]="data.otp.otp2" maxLength="1" (keyup)="otpController($event,otp3,otp1)">
+       </ion-input>
+      </ion-col>
+
+    <ion-col>
+       <ion-input type="tel" class="x" #otp3 name="otp3" #otp3Ctrl="ngModel" required="true" [(ngModel)]="data.otp.otp3" maxLength="1"  (keyup)="otpController($event,otp4,otp2)">
+       </ion-input>
+      </ion-col>
+  
+    <ion-col>
+       <ion-input type="tel" class="x" #otp4 name="otp4" #otp4Ctrl="ngModel" required="true" [(ngModel)]="data.otp.otp4" maxLength="1"  (keyup)="otpController($event,otp5,otp3)">
+      </ion-input>
+    </ion-col>
+  
+  <ion-col>
+      <ion-input type="tel" class="x" #otp5 name="otp5" #otp5Ctrl="ngModel" required="true" [(ngModel)]="data.otp.otp5 " maxLength="1" (keyup)="otpController($event,otp6,otp4)">
+      </ion-input>
+    </ion-col>
+  
+  <ion-col>
+      <ion-input type="tel" class="x" #otp6 name="otp6" #otp6Ctrl="ngModel" required="true" [(ngModel)]="data.otp.otp6" maxLength="1" (keyup)="otpController($event,'',otp5)">
+      </ion-input>
+  
+      </ion-col>
+    </ion-row>
+  </div>
+    <div class="password_forgot" *ngIf="loginWith === 'phone'">
+        <ion-button fill="clear" class="ion-no-pedding" (click)="loginWithfn('email')" >Login with Email!</ion-button>
+    </div>
+    <div class="password_forgot" *ngIf="loginWith === 'email'">
+      <ion-button fill="clear" class="ion-no-pedding" (click)="loginWithfn('phone')" >Login with Phone Number!</ion-button>
+  </div>
+      <div class="signbtn-wrap" *ngIf="!isNext">
+        <ion-button type="button" shape="round" fill="solid" class="signbtn" (click)="getOtp()" [disabled]="!f.valid">
+              Request OTP
+        </ion-button>
+    </div>
+    <div class="signbtn-wrap" *ngIf="isNext">
+        <ion-button type="submit" shape="round" fill="solid" class="signbtn" [disabled]="!f.valid">
+              LOGIN
+        </ion-button>
+    </div>
+    </div>
+    </form>
+    <div class="text-tag">
+      <span> Or via social media</span>
+    </div>
+
+    <div class="social-btns">
+      <ion-button fill="clear" class="facebookbtn ion-no-pedding">
+          <ion-img src="./assets/images/facebook.png"> </ion-img>
+      </ion-button>
+      <ion-button fill="clear" class="googlebtn ion-no-pedding">
+        <ion-img src="./assets/images/google.png"> </ion-img>
+    </ion-button>
+    <ion-button fill="clear" class="applebtn ion-no-pedding">
+      <ion-img src="./assets/images/apple.png"> </ion-img>
+  </ion-button>
+  </div>
+  </ion-card-content>
+  <div class="ion-card-footer">
+    <span>Don't have account?</span><button [routerLink]="['/signup']" class="ion-no-pedding">Sign UP</button>
+</div>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>Copyright &#169; 2023 Ashwani Pushkarna</ion-title>
+  </ion-toolbar>
+</ion-footer>
+

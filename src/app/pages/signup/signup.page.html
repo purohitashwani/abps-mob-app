@@ -1,0 +1,206 @@
+<ion-header class="ion-no-border">
+  <!-- <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar> -->
+  <ion-buttons slot="start">
+    <ion-back-button defaultHref="home" text=""> </ion-back-button>
+  </ion-buttons>
+</ion-header>
+
+<ion-content class="bg-color">
+  <ion-card class="ion-no-margin">
+    <ion-card-header>
+      <ion-card-title>
+        Sign Up
+      </ion-card-title>
+      <ion-card-subtitle>
+        Create your account by filling up the form
+      </ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <form [formGroup]="ionicForm" (ngSubmit)="submitForm()" class="register-form" novalidate>
+        <ion-item>
+          <ion-input formControlName="firstName" type="text" placeholder="First Name" required>
+            <ion-icon name="person-outline"></ion-icon>
+          </ion-input>
+        </ion-item>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl.firstName.errors?.required">
+          First Name is required.
+        </span>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl.firstName.errors?.minlength">
+          First Name should be min 2 chars long.
+        </span>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl.firstName.errors?.maxlength">
+          First Name should be max 30 chars long.
+        </span>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl.firstName.errors?.pattern">
+          Enter valid First Name
+        </span>
+        <ion-item>
+          <ion-input formControlName="lastName" type="text" placeholder="Last Name">
+            <ion-icon name="person-outline"></ion-icon>
+          </ion-input>
+        </ion-item>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl.lastName.errors?.required">
+          Last Name is required.
+        </span>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl.lastName.errors?.minlength">
+          Last Name should be min 2 chars long.
+        </span>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl.lastName.errors?.maxlength">
+          Last Name should be max 30 chars long.
+        </span>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl.lastName.errors?.pattern">
+          Enter valid Last Name
+        </span>
+        <ion-list>
+          <ion-item>
+            <ion-icon name="ribbon-outline"></ion-icon>
+            <ion-select formControlName="gotra" aria-label="Gotra" interface="popover" placeholder="Gotra" required>
+              <ion-select-option value="lonash">Lonash</ion-select-option>
+              <ion-select-option value="shandilya">Shandilya</ion-select-option>
+              <ion-select-option value="bharadwaj">Bharadwaj</ion-select-option>
+              <ion-select-option value="gautam">Gautam</ion-select-option>
+              <ion-select-option value="upmaniu">Upmaniu</ion-select-option>
+              <ion-select-option value="kapil">Kapil</ion-select-option>
+              <ion-select-option value="chandrahas">Chandrahas</ion-select-option>
+              <ion-select-option value="parashar">Parashar</ion-select-option>
+              <ion-select-option value="kashyap">Kashyap</ion-select-option>
+              <ion-select-option value="haritash">Haritash</ion-select-option>
+              <ion-select-option value="sankash">Sankash</ion-select-option>
+              <ion-select-option value="vachash">Vachash</ion-select-option>
+              <ion-select-option value="kaushik">Kaushik</ion-select-option>
+              <ion-select-option value="mudral">Mudral</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+        <ion-list>
+          <span class="error ion-padding" *ngIf="isSubmitted && errorControl.gotra.errors?.required">
+            Gotra is required.
+          </span>
+          <ion-item>
+            <ion-icon name="body-outline"></ion-icon>
+            <ion-select formControlName="gender" aria-label="Gender" interface="popover" placeholder="Gender" required>
+              <ion-select-option value="male">Male</ion-select-option>
+              <ion-select-option value="female">Female</ion-select-option>
+              <ion-select-option value="transgender">Transgender</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl.gender.errors?.required">
+          Gender is required.
+        </span>
+        <ion-item>
+          <ion-input formControlName="email" type="email" placeholder="Email" required>
+            <ion-icon name="mail-outline"></ion-icon>
+          </ion-input>
+        </ion-item>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.required">
+          Email is required.
+        </span>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.pattern">
+          Please provide valid email id.
+        </span>
+        <ion-item>
+          <ion-input formControlName="mobile" type="tel" placeholder="Phone No." required>
+            <ion-icon name="call-outline"></ion-icon>
+          </ion-input>
+        </ion-item>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl.mobile.errors?.required">
+          Mobile number is required.
+        </span>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl.mobile.errors?.pattern">
+          Only numerical values allowed.
+        </span>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl.mobile.errors?.minlength">
+          Mobile number should be 10 digit.
+        </span>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl.mobile.errors?.maxlength">
+          Mobile number should be 10 digit.
+        </span>
+        <ion-list>
+          <ion-item id="open-modal2">
+            <ion-icon name="calendar-outline"></ion-icon>
+            <ion-note *ngIf="ionicForm.value.dob" slot="end">{{defaultDate | date}}</ion-note>
+            <ion-note *ngIf="!ionicForm.value.dob" slot="end">DOB</ion-note>
+          </ion-item>
+          <ion-modal trigger="open-modal2" [cssClass]="'bottom-end'">
+            <ng-template>
+              <ion-datetime presentation="date" size="cover" [showDefaultButtons]="true" (ionChange)="getDate($event)"
+                formControlName="dob" min="1950-01-01" max="2005-12-01"></ion-datetime>
+            </ng-template> </ion-modal></ion-list>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl.dob.errors?.required">
+          DOB is required.
+        </span>
+        <ion-item>
+          <ion-input formControlName="pincode" type="tel" placeholder="Pin code No." required>
+            <ion-icon name="pin-outline"></ion-icon>
+          </ion-input>
+        </ion-item>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl.pincode.errors?.required">
+          Pin code is required.
+        </span>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl.pincode.errors?.pattern">
+          Only Number allowed.
+        </span>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl.pincode.errors?.minlength">
+          Pin code should 6 digit.
+        </span>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl.pincode.errors?.maxlength">
+          Pin code should 6 digit.
+        </span>
+        <ion-item>
+          <ion-input formControlName="refcode" type="text" placeholder="Referance code">
+            <ion-icon name="refresh-circle-outline"></ion-icon>
+          </ion-input>
+        </ion-item>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl.refcode.errors?.required">
+          Referance code is required.
+        </span>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl.refcode.errors?.minlength">
+          Referance code should be 6 chars.
+        </span>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl.refcode.errors?.maxlength">
+          Referance code should 6 chars.
+        </span>
+        <div class="signbtn-wrap">
+          <ion-button type="submit" shape="round" fill="solid" class="signbtn">
+            Sign Up
+          </ion-button>
+        </div>
+      </form>
+      <div class="text-tag">
+        <span>Sign Up with</span>
+      </div>
+      <div class="social-btns">
+        <ion-button fill="clear" class="facebookbtn ion-no-pedding">
+          <ion-img src="./assets/images/facebook.png"> </ion-img>
+      </ion-button>
+      <ion-button fill="clear" class="googlebtn ion-no-pedding">
+        <ion-img src="./assets/images/google.png"> </ion-img>
+    </ion-button>
+    <ion-button fill="clear" class="applebtn ion-no-pedding">
+      <ion-img src="./assets/images/apple.png"> </ion-img>
+  </ion-button>
+  </div>
+    </ion-card-content>
+</ion-card>
+  <!-- <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">signup</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  [(ngModel)]="date"
+value="{{ date | date: 'dd.MM.yyyy' }}"
+-->
+</ion-content>
+<div *ngIf="isLoader" class="spinner-wraper">
+  <ion-spinner></ion-spinner>
+</div>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>Copyright &#169; 2023 Ashwani Pushkarna</ion-title>
+  </ion-toolbar>
+</ion-footer>
