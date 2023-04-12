@@ -100,3 +100,9 @@ ion-spinner {
     height: auto;
     max-height: 100%;
   }
+
+  ion-footer {
+    ion-title {
+      font-weight: 500 !important;
+    }
+  }
