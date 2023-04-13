@@ -163,3 +163,9 @@ ion-footer{
     text-align: left;
     padding: 7px 0px;
     }
+
+    .get_otp_phone {
+        ion-img {
+            min-width:25px !important;
+        }
+    }

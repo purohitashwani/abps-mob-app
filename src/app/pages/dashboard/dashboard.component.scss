@@ -11,23 +11,10 @@
     }
 }
 
-ion-avatar{
-    padding: 10px;
-}
-
-.side-menue {
-    ion-title {
-        font-size: 14px;
-        font-weight: 500;
-        left: -10%;
-    }
+app-footer {
+    width: 100%;
+    min-height: 50px;
+    position: relative;
 }
 
 
-ion-accordion {
-    button {
-        background-color: transparent;
-        background: transparent;
-        font-size: 16px;
-    }
-}

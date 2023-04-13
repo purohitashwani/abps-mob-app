@@ -25,7 +25,7 @@
           <ion-text color="danger">Email is not valid</ion-text>
         </ion-item>
         </div>
-        <div *ngIf="loginWith === 'phone'">
+        <div *ngIf="loginWith === 'phone'" class="get_otp_phone">
           <h3>Phone Number <ion-icon *ngIf="isNext" name="create-outline" (click)="isNext = false"></ion-icon></h3>
           <ion-row class="ion-no-pedding">
             <ion-col size="2" class="ion-no-pedding">

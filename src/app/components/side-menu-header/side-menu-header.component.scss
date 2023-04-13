@@ -1,0 +1,14 @@
+.left_menu_header {
+    ion-col {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0px !important;
+    }
+    .ion-col-two {
+        justify-content: flex-start;
+    }
+    ion-avatar {
+        padding: 5px;
+    }
+}

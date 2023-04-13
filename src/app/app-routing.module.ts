@@ -23,6 +23,10 @@ const routes: Routes = [
   {
     path: 'dashboard',
     loadChildren: () => import('./pages/dashboard/dashboard.module').then( m => m.DashboardModule)
+  },
+  {
+    path: 'work-in-progress',
+    loadChildren: () => import('./pages/work-in-progress/work-in-progress.module').then( m => m.WorkInProgressModule)
   }
 ];
 

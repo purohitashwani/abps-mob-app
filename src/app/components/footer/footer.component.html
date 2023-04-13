@@ -1,0 +1,22 @@
+<ion-tabs>
+  <ion-router-outlet></ion-router-outlet>
+
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button (click)="goHome()">
+      <ion-icon name="home-outline"></ion-icon>
+      Home
+    </ion-tab-button>
+    <ion-tab-button tab="radio">
+      <ion-icon name="people-outline"></ion-icon>
+      Members
+    </ion-tab-button>
+    <ion-tab-button tab="library">
+      <ion-icon name="chatbubbles-outline"></ion-icon>
+      Social
+    </ion-tab-button>
+    <ion-tab-button>
+      <ion-menu-button></ion-menu-button>
+      Menu
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

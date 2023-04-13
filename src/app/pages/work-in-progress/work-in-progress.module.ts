@@ -3,14 +3,11 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
-import { DashboardComponent } from './dashboard.component';
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { WorkInProgressComponent } from './work-in-progress.component';
 import { FooterModule } from '../../components/footer/footer.module';
 import { HeaderdModule } from '../../components/header/header.module';
 import { SideMenuModule } from '../../components/side-menu/side-menu.module';
 import { SideMenuHeaderModule } from '../../components/side-menu-header/side-menu-header.module';
-
-
 
 @NgModule({
   imports: [
@@ -24,11 +21,11 @@ import { SideMenuHeaderModule } from '../../components/side-menu-header/side-men
     RouterModule.forChild([
       {
         path: '',
-        component: DashboardComponent
+        component: WorkInProgressComponent
       }
     ])
   ],
-  declarations: [DashboardComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  exports: [WorkInProgressComponent],
+  declarations: [WorkInProgressComponent]
 })
-export class DashboardModule {}
+export class WorkInProgressModule { }

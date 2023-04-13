@@ -1,0 +1,22 @@
+<ion-accordion-group>
+  <ion-accordion value="first" toggleIcon="chevron-forward-outline" [readonly]="true">
+    <ion-item slot="header" color="transparent">
+      <button>Profile & Setting</button>
+    </ion-item>
+  </ion-accordion>
+  <ion-accordion value="second" toggleIcon="chevron-forward-outline" [readonly]="true">
+    <ion-item slot="header" color="transparent">
+      <button>Contact Us</button>
+    </ion-item>
+  </ion-accordion>
+  <ion-accordion value="third" toggleIcon="chevron-forward-outline" [readonly]="true">
+    <ion-item slot="header" color="transparent">
+      <button>About Us</button>
+    </ion-item>
+  </ion-accordion>
+  <ion-accordion value="forth" toggleIcon="chevron-forward-outline">
+    <ion-item slot="header" color="transparent">
+      <button [routerLink]="['/login']">Logout</button>
+    </ion-item>
+  </ion-accordion>
+</ion-accordion-group>

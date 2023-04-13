@@ -1,0 +1,18 @@
+app-footer {
+    width: 100%;
+    min-height: 50px;
+    position: relative;
+}
+
+.ion-page {
+    .img-wraper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100;
+    }
+    ion-img {
+        height: 150px;;
+    }
+}

@@ -1,0 +1,16 @@
+ion-accordion {
+    button {
+        background-color: transparent;
+        background: transparent;
+        font-size: 16px;
+    }
+}
+    ion-accordion {
+        button {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100%;
+        }
+    }
