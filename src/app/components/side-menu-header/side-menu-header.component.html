@@ -7,7 +7,9 @@
         </ion-avatar>
       </ion-col>
       <ion-col size="9" class="ion-col-two">
-          <ion-text>Hi, Ashwani Purohit</ion-text>
+          <ion-text *ngIf="userData && userData.name">Hi, {{userData.name}}</ion-text>
+          <ion-text *ngIf="!userData">Hi, Ashwani Purohit !ud</ion-text>
+          <ion-text *ngIf="userData && !userData.name">Hi, Ashwani Purohit !udn</ion-text>
       </ion-col>
     </ion-row>
     <!-- <ion-subtitle><ion-icon name="call-outline"></ion-icon>+91-7615972111</ion-subtitle> -->

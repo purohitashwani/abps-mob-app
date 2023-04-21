@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PrivacyScreen } from '@capacitor-community/privacy-screen';
+
 
 @Component({
   selector: 'app-side-menu',
@@ -12,14 +12,5 @@ export class SideMenuComponent  implements OnInit {
 
   ngOnInit() {}
 
-  enableScreen = async () => {
-    console.log('sdfd');
-    await PrivacyScreen.enable();
-  };
-
-  disableScreen = async () => {
-    console.log('sdfd');
-    await PrivacyScreen.disable();
-  };
 
 }

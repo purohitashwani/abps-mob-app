@@ -6,16 +6,16 @@
       <ion-icon name="home-outline"></ion-icon>
       Home
     </ion-tab-button>
-    <ion-tab-button tab="radio">
+    <ion-tab-button (click)="workInProgress()">
       <ion-icon name="people-outline"></ion-icon>
       Members
     </ion-tab-button>
-    <ion-tab-button tab="library">
+    <ion-tab-button  (click)="workInProgress()">
       <ion-icon name="chatbubbles-outline"></ion-icon>
       Social
     </ion-tab-button>
-    <ion-tab-button>
-      <ion-menu-button></ion-menu-button>
+    <ion-tab-button (click)="openMenu()">
+      <ion-icon name="menu-outline"></ion-icon>
       Menu
     </ion-tab-button>
   </ion-tab-bar>

@@ -31,13 +31,13 @@
             <ion-col size="2" class="ion-no-pedding">
               <ion-item>
                 <ion-img src="./assets/images/india.png">+91 </ion-img>
-                <ion-note slot="end">&nbsp;+91</ion-note>
+                <ion-note class="contact-note" slot="end">&nbsp;+91</ion-note>
             </ion-item>
           </ion-col>
           <ion-col size="10" class="ion-no-pedding">
             <ion-item>
               <ion-input type="tel" name="phone" required="true" [(ngModel)]="data.phone" #phoneCtrl="ngModel" placeholder="Enter Number" maxlength="10" minlength="10" phone [disabled]="isNext">
-                <ion-icon name="call-outline"></ion-icon>
+                <!-- <ion-icon name="call-outline"></ion-icon> -->
               </ion-input>
           </ion-item>
           </ion-col>

@@ -1,0 +1,16 @@
+
+.header-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 0;
+    ion-img {
+        max-width: 40px;
+    }
+    ion-text {
+        padding-left: 15px;
+        color: #cd9f1c;
+        font-weight: 600;
+    }
+}
+   

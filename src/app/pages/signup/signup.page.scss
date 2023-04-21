@@ -127,12 +127,13 @@ ion-modal {
 
   ion-note {
     width: 100%;
-    padding-left: 10px;
+    padding-left: 0px;
     position: absolute;
-    top:0;
+    top: -7px;
     font-size: 18px;
-    color: #000000;
-    opacity: 0.5;
+    color: #000;
+    opacity: .5;
+    left: -7px;
   }
 
   ion-card .list-ios{

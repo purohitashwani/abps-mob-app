@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {
-  FacebookLogin,
-  FacebookLoginResponse,
+  FacebookLogin
 } from '@capacitor-community/facebook-login';
 import { CapacitorHttp } from '@capacitor/core';
+import { Preferences } from '@capacitor/preferences';
+import { Router } from '@angular/router';
+import { PrivacyScreen } from '@capacitor-community/privacy-screen';
 
 @Component({
   selector: 'app-home',
@@ -11,47 +13,50 @@ import { CapacitorHttp } from '@capacitor/core';
   styleUrls: ['./home.page.scss']
 })
 export class HomePage implements OnInit {
-
   accessToken: any;
+  userData: any;
+  constructor(private router:Router) {}
 
-  constructor() {
-
-   }
+  ngOnInit() {
+    this.disableScreen();
+  }
 
    async loginWithFacebook() {
-    // use hook after platform dom ready
-    //await FacebookLogin.initialize({ appId: '209978108333116' });
     const FACEBOOK_PERMISSIONS = [
       'email',
       'user_birthday'
     ];
     const result = await FacebookLogin.login({ permissions: FACEBOOK_PERMISSIONS });
-    
     if (result.accessToken) {
-      // Login successful.
-      console.log(`Facebook access token is ${result.accessToken.token}`);
-      this.accessToken = result.accessToken;
+      this.accessToken = result.accessToken
       this.loadFbUserData();
-    }else {
-      this.accessToken = 'ashwani';
     }
    }
 
    loadFbUserData() {
-    const url = `https://graph.facebook.com/${this.accessToken.userId}?field=id,name,picture.width(720),birthday,email&access_token=${this.accessToken.token}`;
-
-    const options = {
-      url: url,
-      headers: { },
-      data: { },
-    };
+    const url = `https://graph.facebook.com/${this.accessToken.userId}?fields=id,name,birthday,last_name,email,gender,hometown,short_name,first_name,picture.width(720)&access_token=${this.accessToken.token}`;
+    const options = {url: url};
     CapacitorHttp.post(options).then(res => {
-      let final = JSON.parse(res.data);
-      console.log('final.data', final)
-    })
+      const userData = JSON.parse(res.data);
+      this.userData = {
+        name: userData.name
+      };
+      this.userData = JSON.stringify(this.userData);
+      Preferences.set({
+        key: 'user',
+        value: JSON.stringify(this.userData)
+      });
+      this.router.navigate(['/dashboard']);
+    }).catch(err => {
+      console.log(err);
+    }) ;
    }
 
-  ngOnInit() {
-  }
+   async disableScreen() {
+    console.log('sdfd');
+    await PrivacyScreen.disable();
+  };
+
+  
 
 }
