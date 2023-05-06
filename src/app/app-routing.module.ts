@@ -9,6 +9,10 @@ const routes: Routes = [
   },
   { path: 'home', loadChildren: () => import('./pages/home/home.module').then(m => m.HomePageModule) },
   {
+    path: 'splash',
+    loadChildren: () => import('./splash/splash/splash.module').then( m => m.SplashModule)
+  },
+  {
     path: 'login',
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
   },
@@ -23,6 +27,10 @@ const routes: Routes = [
   {
     path: 'dashboard',
     loadChildren: () => import('./pages/dashboard/dashboard.module').then( m => m.DashboardModule)
+  },
+  {
+    path: 'profile',
+    loadChildren: () => import('./pages/profile-setting/profile-setting.module').then( m => m.ProfileSettingModule)
   },
   {
     path: 'work-in-progress',

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { MenuController } from '@ionic/angular';
 
 
 @Component({
@@ -8,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SideMenuComponent  implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private menuController: MenuController) { }
 
   ngOnInit() {}
 
+
+  goTo(page:string) {
+    this.menuController.close();
+      setTimeout(()=> {
+        this.router.navigate([page]);
+      },500)
+  }
 
 }

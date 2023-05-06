@@ -3,13 +3,14 @@
     <ion-row class="left_menu_header">
       <ion-col size="3" class="ion-col-one">
         <ion-avatar>
-          <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+          <img *ngIf="userData && userData.picture && userData.picture.data" alt="Silhouette of a person's head" src="{{userData.picture.data.url}}" />
+          <img *ngIf="userData && !userData.picture" alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+          <img *ngIf="!userData" alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
         </ion-avatar>
       </ion-col>
       <ion-col size="9" class="ion-col-two">
-          <ion-text *ngIf="userData && userData.name">Hi, {{userData.name}}</ion-text>
-          <ion-text *ngIf="!userData">Hi, Ashwani Purohit !ud</ion-text>
-          <ion-text *ngIf="userData && !userData.name">Hi, Ashwani Purohit !udn</ion-text>
+          <ion-text *ngIf="userData && userData.first_name">Hi, {{userData.first_name}}</ion-text>
+          <ion-text *ngIf="!userData">Hi, Pushkarna User</ion-text>
       </ion-col>
     </ion-row>
     <!-- <ion-subtitle><ion-icon name="call-outline"></ion-icon>+91-7615972111</ion-subtitle> -->

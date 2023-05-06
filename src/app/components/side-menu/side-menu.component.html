@@ -1,17 +1,22 @@
 <ion-accordion-group>
-  <ion-accordion value="first" toggleIcon="chevron-forward-outline" [readonly]="true">
+  <ion-accordion value="first" toggleIcon="chevron-forward-outline">
     <ion-item slot="header" color="transparent">
-      <button>Profile & Setting</button>
+      <button (click)="goTo('/profile')">Profile & Setting</button>
     </ion-item>
   </ion-accordion>
   <ion-accordion value="second" toggleIcon="chevron-forward-outline" [readonly]="true">
     <ion-item slot="header" color="transparent">
-      <button>Contact Us</button>
+      <button (click)="goTo('/contact')">Contact Us</button>
     </ion-item>
   </ion-accordion>
   <ion-accordion value="third" toggleIcon="chevron-forward-outline" [readonly]="true">
     <ion-item slot="header" color="transparent">
-      <button>About Us</button>
+      <button (click)="goTo('/about')">About Us</button>
+    </ion-item>
+  </ion-accordion>
+  <ion-accordion value="third" toggleIcon="chevron-forward-outline" [readonly]="true">
+    <ion-item slot="header" color="transparent">
+      <button (click)="goTo('/feedback')">Feedback</button>
     </ion-item>
   </ion-accordion>
   <ion-accordion value="forth" toggleIcon="chevron-forward-outline">

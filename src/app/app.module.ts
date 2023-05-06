@@ -8,6 +8,11 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 
+//storage
+import { IonicStorageModule } from '@ionic/storage-angular';
+import { Drivers } from '@ionic/storage';
+import * as cordovaSQLiteDriver from 'localforage-cordovasqlitedriver';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,7 +21,15 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    IonicStorageModule.forRoot({
+        name: 'abps',
+        driverOrder: [
+          Drivers.LocalStorage,
+          cordovaSQLiteDriver._driver,
+          Drivers.IndexedDB
+        ],
+    })
   ],
   providers: [
     // StatusBar,
