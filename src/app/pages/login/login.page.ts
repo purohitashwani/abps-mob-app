@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { ToastController } from '@ionic/angular';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { SocialLoginService } from '../../@core/services/social-login.service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,7 @@ export class LoginPage implements OnInit {
   //ionicForm: any =  FormGroup;
   defaultDate = "1987-06-30";
   isSubmitted = false;
-  constructor(public formBuilder: FormBuilder, private toastController: ToastController, private router: Router) {
+  constructor(public formBuilder: FormBuilder, private toastController: ToastController, private router: Router, public socialLogin: SocialLoginService) {
     this.data = {
       email: '',
       phone: '',
@@ -104,6 +105,10 @@ export class LoginPage implements OnInit {
     // } else {
     //   console.log(this.ionicForm.value)
     // }
+  }
+
+  loginWithFacebook() {
+    this.socialLogin.loginWithFacebook();
   }
 
 }

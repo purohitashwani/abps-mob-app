@@ -4,6 +4,7 @@ import { Device } from '@capacitor/device';
 import { Platform } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { StatusBar, Style } from '@capacitor/status-bar';
+import { FacebookLogin } from '@capacitor-community/facebook-login';
 
 //storage
 import { Storage } from '@ionic/storage-angular';
@@ -37,7 +38,10 @@ export class AppComponent {
 
    initializeApp() {
     this.platform.ready().then(()=> {
+      // StatusBar.setOverlaysWebView({ overlay: true });
+      // StatusBar.hide();
       StatusBar.setStyle({ style: Style.Default });
+      FacebookLogin.initialize({ appId: '1923687517995492' });
       this.router.navigateByUrl('splash');
     })
   }

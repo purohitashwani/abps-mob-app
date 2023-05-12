@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { SocialLoginService } from '../../@core/services/social-login.service';
 
 
 @Component({
@@ -14,7 +15,7 @@ export class SignupPage implements OnInit {
   defaultDate = new Date().toISOString();
   isSubmitted = false;
   isLoader= false;
-  constructor(public formBuilder: FormBuilder, private alertController: AlertController, private router: Router) { }
+  constructor(public formBuilder: FormBuilder, private alertController: AlertController, private router: Router, public socialLogin: SocialLoginService) { }
   ngOnInit() {
     this.ionicForm = this.formBuilder.group({
       firstName: ['', [Validators.required, Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.minLength(2)]],
@@ -70,6 +71,10 @@ export class SignupPage implements OnInit {
       }, 2000);
       console.log(this.ionicForm.value)
     }
+  }
+
+  loginWithFacebook() {
+    this.socialLogin.loginWithFacebook();
   }
 
 }
