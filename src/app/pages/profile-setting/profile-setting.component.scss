@@ -2,3 +2,54 @@ ion-img {
     height: 150px;
     width: 150px;
 }
+
+ion-header {
+    background: linear-gradient(-45deg, rgba(253,119,29,1), rgba(255,181,2,1), rgba(253,119,29,1), rgba(255,181,2,1));
+    ion-back-button {
+        color: #fff;
+        --ion-color-primary: #fff !important;
+    }
+    ion-buttons {
+       // background-color: #ffb502;
+        padding: 10px 5px;
+        color: #fff;
+        --ion-text-color: #fff;
+    }
+}
+
+.align-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ion-avatar {
+    min-width: 100px;
+    min-height: 100px;
+    margin: 10px 0px;
+}
+
+ion-content {
+    background-color: #fff;
+    --ion-background-color: #fff !important;
+    color: #000;
+    --ion-text-color: #000000;
+}
+
+ion-col {
+    text-transform: capitalize;
+    font-size: 16px;
+    font-weight: 500;
+    color: #464444;
+}
+
+ion-item-divider {
+    background: linear-gradient(-45deg, rgba(253,119,29,1), rgba(255,181,2,1), rgba(253,119,29,1), rgba(255,181,2,1));
+}
+
+ion-label {
+    font-size: 18px !important;
+    font-weight: 600;
+    color: #fff !important;
+    text-transform: capitalize;
+}

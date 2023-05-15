@@ -1,10 +1,23 @@
+<ion-header class="ion-no-border">
+  <!-- <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar> -->
+  <ion-buttons slot="start">
+    <ion-back-button defaultHref="home" text=""></ion-back-button>
+    Profile & Setting
+  </ion-buttons>
+</ion-header>
 <ion-content>
   <ion-grid>
     <ion-row>
-      <ion-col>
+      <ion-col class="align-center">
         <div>
           <ion-avatar>
-            <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+            <img *ngIf="userData && userData.picture && userData.picture.data && userData.picture.data.url" alt="Silhouette of a person's head" src="{{userData.picture.data.url}}" />
+            <img *ngIf="!userData" alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+            <img *ngIf="userData && !userData.picture" alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+            <img *ngIf="userData && userData.picture && !userData.picture.data" alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+            <img *ngIf="userData && userData.picture && userData.picture.data && !userData.picture.data.url" alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
           </ion-avatar>
         </div>
       </ion-col>
@@ -20,23 +33,34 @@
             <ion-grid>
               <ion-row>
                 <ion-col>Name</ion-col>
-                <ion-col>Ashwani</ion-col>
+                <ion-col *ngIf="userData && userData.name">{{userData.name}}</ion-col>
+                <ion-col *ngIf="!userData">-</ion-col>
+                <ion-col *ngIf="userData && !userData.name">-</ion-col>
               </ion-row>
               <ion-row>
                 <ion-col>Email</ion-col>
-                <ion-col>Ashwani@gmail.com</ion-col>
+                <ion-col *ngIf="userData && userData.email">{{userData.email}}</ion-col>
+                <ion-col *ngIf="!userData">-</ion-col>
+                <ion-col *ngIf="userData && !userData.email">-</ion-col>
               </ion-row>
               <ion-row>
                 <ion-col>Gender</ion-col>
-                <ion-col>Male</ion-col>
+                <ion-col *ngIf="userData && userData.gender">{{userData.gender}}</ion-col>
+                <ion-col *ngIf="!userData">-</ion-col>
+                <ion-col *ngIf="userData && !userData.gender">-</ion-col>
               </ion-row>
               <ion-row>
                 <ion-col>DOB</ion-col>
-                <ion-col>11/29/1993</ion-col>
+                <ion-col *ngIf="userData && userData.birthday">{{userData.birthday}}</ion-col>
+                <ion-col *ngIf="!userData">-</ion-col>
+                <ion-col *ngIf="userData && !userData.birthday">-</ion-col>
               </ion-row>
               <ion-row>
                 <ion-col>Hometown</ion-col>
-                <ion-col>Bikaner</ion-col>
+                <ion-col *ngIf="userData && userData.hometown && userData.hometown.name">{{userData.hometown.name}}</ion-col>
+                <ion-col *ngIf="!userData">-</ion-col>
+                <ion-col *ngIf="userData && !userData.hometown">-</ion-col>
+                <ion-col *ngIf="userData && userData.hometown && !userData.hometown.name">-</ion-col>
               </ion-row>
               </ion-grid>
             
@@ -48,7 +72,17 @@
             </ion-item>
             <ion-item lines="none">
               <ion-label>Armenia</ion-label>
-            </ion-item> -->
+            </ion-item>
+          
+              {
+                  "model": "iPhone",
+                  "platform": "web",
+                  "operatingSystem": "ios",
+                  "osVersion": "13.2.3",
+                  "manufacturer": "Google Inc.",
+                  "isVirtual": false
+              }
+          -->
           </ion-item-group>
           
           <ion-item-group>
@@ -59,23 +93,33 @@
             <ion-grid>
               <ion-row>
                 <ion-col>Model</ion-col>
-                <ion-col>moto g(40) fusion</ion-col>
+                <ion-col *ngIf="deviceInfo && deviceInfo.model">{{deviceInfo.model}}</ion-col>
+                <ion-col *ngIf="!deviceInfo">-</ion-col>
+                <ion-col *ngIf="deviceInfo && !deviceInfo.model">-</ion-col>
               </ion-row>
               <ion-row>
                 <ion-col>Operating System</ion-col>
-                <ion-col>android</ion-col>
+                <ion-col *ngIf="deviceInfo && deviceInfo.operatingSystem">{{deviceInfo.operatingSystem}}</ion-col>
+                <ion-col *ngIf="!deviceInfo">-</ion-col>
+                <ion-col *ngIf="deviceInfo && !deviceInfo.operatingSystem">-</ion-col>
               </ion-row>
               <ion-row>
                 <ion-col>OS Version</ion-col>
-                <ion-col>12</ion-col>
+                <ion-col *ngIf="deviceInfo && deviceInfo.osVersion">{{deviceInfo.osVersion}}</ion-col>
+                <ion-col *ngIf="!deviceInfo">-</ion-col>
+                <ion-col *ngIf="deviceInfo && !deviceInfo.osVersion">-</ion-col>
               </ion-row>
               <ion-row>
                 <ion-col>Manufacturer</ion-col>
-                <ion-col>motorola</ion-col>
+                <ion-col *ngIf="deviceInfo && deviceInfo.manufacturer">{{deviceInfo.manufacturer}}</ion-col>
+                <ion-col *ngIf="!deviceInfo">-</ion-col>
+                <ion-col *ngIf="deviceInfo && !deviceInfo.manufacturer">-</ion-col>
               </ion-row>
               <ion-row>
                 <ion-col>Battery Level</ion-col>
-                <ion-col>41%</ion-col>
+                <ion-col *ngIf="batteryInfo && batteryInfo.batteryLevel">{{batteryInfo.batteryLevel}} %</ion-col>
+                <ion-col *ngIf="!batteryInfo">-</ion-col>
+                <ion-col *ngIf="batteryInfo && !batteryInfo.batteryLevel">-</ion-col>
               </ion-row>
               </ion-grid>
           </ion-item-group>

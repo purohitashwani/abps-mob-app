@@ -11,7 +11,7 @@ import { StatusBar, Style } from '@capacitor/status-bar';
 export class SplashComponent  implements OnInit {
 
   constructor(public router: Router, private platform: Platform,) { 
-    this.initializeApp();
+    //this.initializeApp();
     setTimeout(()=> {
       this.router.navigateByUrl('home');
     }, 4000)
