@@ -8,6 +8,13 @@ import { SocialLoginService } from '../../@core/services/social-login.service';
   styleUrls: ['./home.page.scss']
 })
 export class HomePage implements OnInit {
+
+
+  appLanguageList = [
+    {code: 'en', title: "english", text: "english"},
+    {code: 'hi', title: "hindi", text: "हिंदी"}
+  ]
+
   accessToken: any;
   userData: any;
   constructor(public socialLogin: SocialLoginService) {}

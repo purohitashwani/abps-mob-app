@@ -6,12 +6,19 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 // import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 //storage
 import { IonicStorageModule } from '@ionic/storage-angular';
 import { Drivers } from '@ionic/storage';
 import * as cordovaSQLiteDriver from 'localforage-cordovasqlitedriver';
+
+import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json')
+}
 
 
 @NgModule({
@@ -22,6 +29,13 @@ import * as cordovaSQLiteDriver from 'localforage-cordovasqlitedriver';
     IonicModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: createTranslateLoader,
+        deps: [HttpClient]
+      }
+    }),
     IonicStorageModule.forRoot({
         name: 'abps',
         driverOrder: [
@@ -34,7 +48,7 @@ import * as cordovaSQLiteDriver from 'localforage-cordovasqlitedriver';
   providers: [
     // StatusBar,
     // SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
   

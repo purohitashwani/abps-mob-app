@@ -1,0 +1,11 @@
+{
+    "site": {
+        "Title": "Welcome",
+        "Description": "fadsfdsafdasfdasf"
+    },
+    "profilePage": {
+        "title": "Profile & Settings",
+        "profile": "Profile",
+        "device": "Device"
+    }
+}

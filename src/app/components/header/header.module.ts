@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 //import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './header.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 
@@ -10,6 +11,7 @@ import { HeaderComponent } from './header.component';
   imports: [
     CommonModule,
     IonicModule,
+    TranslateModule
     // RouterModule.forChild([
     //   {
     //     path: '',

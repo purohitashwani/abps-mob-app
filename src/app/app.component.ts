@@ -9,6 +9,9 @@ import { FacebookLogin } from '@capacitor-community/facebook-login';
 //storage
 import { Storage } from '@ionic/storage-angular';
 import * as cordovaSQLiteDriver from 'localforage-cordovasqlitedriver';
+
+import { TranslateService } from '@ngx-translate/core'
+
 register();
 @Component({
   selector: 'app-root',
@@ -19,10 +22,13 @@ export class AppComponent {
   constructor(
     private platform: Platform,
     private router: Router,
-    private appStorage: Storage
+    private appStorage: Storage,
+    private translate: TranslateService
   ) {
+    this.translate.setDefaultLang('hi');
+    this.translate.addLangs(['hi','en']);
     this.init();
-    this.initializeApp();
+    //this.initializeApp();
   }
 
 

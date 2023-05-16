@@ -4,6 +4,7 @@ import {
 } from '@capacitor-community/facebook-login';
 import { CapacitorHttp } from '@capacitor/core';
 import { Router } from '@angular/router';
+import { LoadingController } from '@ionic/angular';
 
 //storage
 import { Storage } from '@ionic/storage-angular';
@@ -14,7 +15,7 @@ import { Storage } from '@ionic/storage-angular';
 export class SocialLoginService {
   accessToken: any;
 
-  constructor(private router:Router, private myAppStorage: Storage) { }
+  constructor(private router:Router, private myAppStorage: Storage, private loadingCtrl: LoadingController) { }
 
   async loginWithFacebook() {
     const FACEBOOK_PERMISSIONS = [
@@ -29,14 +30,35 @@ export class SocialLoginService {
    }
 
    loadFbUserData() {
+    this.showLoader();
     const url = `https://graph.facebook.com/${this.accessToken.userId}?fields=id,name,birthday,last_name,email,gender,hometown,short_name,first_name,picture.width(720)&access_token=${this.accessToken.token}`;
     const options = {url: url};
     CapacitorHttp.post(options).then(res => {
       const userData = JSON.parse(res.data);
       this.myAppStorage.set('user', userData);
+      this.dismissLoader();
       this.router.navigate(['/dashboard']);
     }).catch(err => {
       console.log(err);
     }) ;
    }
+
+// show loader
+showLoader() {
+  this.loadingCtrl.create({
+      message: 'Loading...'
+  }).then((response) => {
+      response.present();
+  });
+}
+
+
+// Dismiss loader
+dismissLoader() {
+  this.loadingCtrl.dismiss().then((response) => {
+      console.log('Loader closed!', response);
+  }).catch((err) => {
+      console.log('Error occured : ', err);
+  });
+}
 }

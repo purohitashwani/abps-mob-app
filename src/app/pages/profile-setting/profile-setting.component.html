@@ -2,9 +2,10 @@
   <!-- <ion-toolbar>
     <ion-title>login</ion-title>
   </ion-toolbar> -->
-  <ion-buttons slot="start">
+  <ion-buttons slot="start" translate>
     <ion-back-button defaultHref="home" text=""></ion-back-button>
-    Profile & Setting
+    profilePage.title
+    <!-- <h1 translate>site.Title</h1> -->
   </ion-buttons>
 </ion-header>
 <ion-content>
@@ -27,7 +28,7 @@
         <div>
           <ion-item-group>
             <ion-item-divider>
-              <ion-label>Profile</ion-label>
+              <ion-label translate>profilePage.profile</ion-label>
             </ion-item-divider>
 
             <ion-grid>
@@ -87,7 +88,7 @@
           
           <ion-item-group>
             <ion-item-divider>
-              <ion-label>Device</ion-label>
+              <ion-label translate>profilePage.device</ion-label>
             </ion-item-divider>
           
             <ion-grid>
