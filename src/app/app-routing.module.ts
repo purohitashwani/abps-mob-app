@@ -33,6 +33,14 @@ const routes: Routes = [
     loadChildren: () => import('./pages/profile-setting/profile-setting.module').then( m => m.ProfileSettingModule)
   },
   {
+    path: 'about',
+    loadChildren: () => import('./pages/about-us/about-us.module').then( m => m.AboutUsModule)
+  },
+  {
+    path: 'contact',
+    loadChildren: () => import('./pages/contact-us/contact-us.module').then( m => m.ContactUsModule)
+  },
+  {
     path: 'work-in-progress',
     loadChildren: () => import('./pages/work-in-progress/work-in-progress.module').then( m => m.WorkInProgressModule)
   }

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { SideMenuComponent } from './side-menu.component';
 import {SideMenuRoutingModule } from './side-menu-routing.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 
@@ -10,7 +11,8 @@ import {SideMenuRoutingModule } from './side-menu-routing.module';
   imports: [
     CommonModule,
     IonicModule,
-    SideMenuRoutingModule
+    SideMenuRoutingModule,
+    TranslateModule
   ],
   declarations: [SideMenuComponent],
   exports: [SideMenuComponent]

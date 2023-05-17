@@ -1,11 +1,50 @@
 {
     "site": {
-        "Title": "Namste",
-        "Description": "fadsfdsafdasfdasf"
+        "Title": "नमस्ते",
+        "Description": "जय गणेश"
+    },
+    "leftMenu": {
+        "profileSettings": "प्रोफाइल और सेटिंग्स",
+        "contactus": "संपर्क करें",
+        "aboutus": "हमारे बारे में",
+        "feedback": "प्रतिक्रिया",
+        "share": "हमें साझा करें",
+        "logout": "लॉग आउट"
     },
     "profilePage": {
         "title": "प्रोफाइल एंड सेटिंग्स",
         "profile": "प्रोफाइल",
         "device": "डिवाइस"
+    },
+    "aboutPage": {
+        "title": "हमारे बारे में",
+        "about": "यह एक ऑनलाइन पुष्करणा मंच है। इसे बनाने का उद्देश्य समाज के सभी सम्मानित सदस्यों को एक परिवार के रूप में जोड़ना और सभी के विचारों को आपस में आदान-प्रदान करना है। ताकि समाज को नई दिशा और ऊर्जा मिले।"
+    },
+    "contactPage": {
+        "title": "संपर्क करें"
+    },
+    "dashboard": {
+        "education": "शिक्षा",
+        "devotional": "धार्मिक",
+        "donation": "सहयोग",
+        "matrimony": "विवाह",
+        "health": "स्वास्थ्य",
+        "jobs": "नौकरियां",
+        "news": "समाचार",
+        "events": "आयोजन",
+        "elections": "चुनाव",
+        "sports": "खेल",
+        "apply": "आवेदन",
+        "quizes": "प्रश्नोत्तरी"
+    },
+    "header": {
+        "languagetitle": "भाषा चुने"
+    },
+    "footer": {
+        "home": "होम",
+        "members": "सदस्य",
+        "organizations": "संगठन",
+        "menu": "मेन्यू"
     }
+
 }

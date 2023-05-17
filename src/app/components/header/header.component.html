@@ -15,17 +15,20 @@
 
     <ion-grid>
       <ion-row>
-        <ion-col size="12" size="10">
+        <ion-col size="12" size="2">
+          <ion-img class="logo" src="./assets/images/logo.png"></ion-img>
+        </ion-col>
+        <ion-col size="12" size="8">
           <ion-searchbar></ion-searchbar>
         </ion-col>
         <ion-col size="12" size="1">
           <div>
-            <ion-icon name="location-outline"></ion-icon>
+            <ion-icon (click)="getGeoLocation()" name="location-sharp"></ion-icon>
           </div>
         </ion-col>
         <ion-col size="12" size="1">
           <div>
-            <ion-icon (click)="setOpen(true)" expand="block" name="language-outline"></ion-icon>
+            <ion-icon (click)="setOpen(true)" expand="block" name="language-sharp"></ion-icon>
           </div>
         </ion-col>
       </ion-row>
@@ -41,10 +44,13 @@
     <ng-template>
       <ion-header>
         <ion-toolbar>
-          <ion-title>Select Language</ion-title>
-          <ion-buttons slot="end">
-            <ion-button (click)="setOpen(false)">Close</ion-button>
-          </ion-buttons>
+          <!-- <ion-buttons slot="start">
+            <ion-button (click)="setOpen(false)">Cancle</ion-button>
+          </ion-buttons> -->
+          <ion-title translate>header.languagetitle</ion-title>
+          <!-- <ion-buttons slot="end">
+            <ion-button (click)="setOpen(false)">Apply</ion-button>
+          </ion-buttons> -->
         </ion-toolbar>
       </ion-header>
       <div class="wrapper">
@@ -65,10 +71,11 @@
             <ion-select-option value="hi">हिंदी </ion-select-option>
           </ion-select>
         </ion-item> -->
-        <ion-radio-group (ionChange)="onLanguageChange($event)">
+        <ion-radio-group [(ngModel)]="lan">
           <ion-radio value="hi" aria-label="Custom checkbox">हिंदी</ion-radio> <br />
           <ion-radio value="en" aria-label="Custom checkbox that is checked">English</ion-radio>
         </ion-radio-group>
+        <ion-button expand="full" (click)="setOpen(false)" class="lan-apply" (click)="onLanguageChange()">Apply</ion-button>
       </div>
     </ng-template>
   </ion-modal>

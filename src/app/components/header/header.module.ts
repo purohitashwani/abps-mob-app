@@ -4,6 +4,7 @@ import { IonicModule } from '@ionic/angular';
 //import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './header.component';
 import { TranslateModule } from '@ngx-translate/core';
+import {FormsModule} from '@angular/forms';
 
 
 
@@ -11,7 +12,8 @@ import { TranslateModule } from '@ngx-translate/core';
   imports: [
     CommonModule,
     IonicModule,
-    TranslateModule
+    TranslateModule,
+    FormsModule
     // RouterModule.forChild([
     //   {
     //     path: '',

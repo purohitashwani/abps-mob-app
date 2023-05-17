@@ -9,6 +9,7 @@ import { FooterModule } from '../../components/footer/footer.module';
 import { HeaderdModule } from '../../components/header/header.module';
 import { SideMenuModule } from '../../components/side-menu/side-menu.module';
 import { SideMenuHeaderModule } from '../../components/side-menu-header/side-menu-header.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 
@@ -21,6 +22,7 @@ import { SideMenuHeaderModule } from '../../components/side-menu-header/side-men
     HeaderdModule,
     SideMenuModule,
     SideMenuHeaderModule,
+    TranslateModule,
     RouterModule.forChild([
       {
         path: '',

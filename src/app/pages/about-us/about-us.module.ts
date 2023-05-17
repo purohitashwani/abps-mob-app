@@ -1,12 +1,29 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+//import { FormsModule } from '@angular/forms';
+import { IonicModule } from '@ionic/angular';
+import { RouterModule } from '@angular/router';
+import { AboutUsComponent } from './about-us.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 
 @NgModule({
-  declarations: [],
   imports: [
-    CommonModule
-  ]
+    CommonModule,
+    //FormsModule,
+    IonicModule,
+    TranslateModule,
+    RouterModule.forChild([
+      {
+        path: '',
+        component: AboutUsComponent
+      }
+    ])
+  ],
+  declarations: [AboutUsComponent]
 })
 export class AboutUsModule { }
+
+
+

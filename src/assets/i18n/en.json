@@ -3,9 +3,47 @@
         "Title": "Welcome",
         "Description": "fadsfdsafdasfdasf"
     },
+    "leftMenu": {
+        "profileSettings": "Profile & Settings",
+        "contactus": "Contact Us",
+        "aboutus": "About Us",
+        "feedback": "Feedback",
+        "share": "Share",
+        "logout": "Logout"
+    },
     "profilePage": {
         "title": "Profile & Settings",
         "profile": "Profile",
         "device": "Device"
+    },
+    "aboutPage": {
+        "title": "About Us",
+        "about": "This is an online Pushkarna platform. The purpose of making this is to connect all the respected members of the society as a family and to exchange the views of all. So that the society gets new direction and energy."
+    },
+    "contactPage": {
+        "title": "Contact Us"
+    },
+    "dashboard": {
+        "education": "Education",
+        "devotional": "Devotional",
+        "donation": "Donation",
+        "matrimony": "Matrimony",
+        "health": "Health",
+        "jobs": "Jobs",
+        "news": "News",
+        "events": "Events",
+        "elections": "Elections",
+        "sports": "Sports",
+        "apply": "Apply",
+        "quizes": "Quizes"
+    },
+    "header": {
+        "languagetitle": "Select Language"
+    }, 
+    "footer": {
+        "home": "Home",
+        "members": "Members",
+        "organizations": "Organizations",
+        "menu": "Menu"
     }
 }

@@ -1,27 +1,32 @@
 <ion-accordion-group>
   <ion-accordion value="first" toggleIcon="chevron-forward-outline">
     <ion-item slot="header" color="transparent">
-      <button (click)="goTo('/profile')">Profile & Setting</button>
+      <button (click)="goTo('/profile')" translate>leftMenu.profileSettings</button>
     </ion-item>
   </ion-accordion>
-  <ion-accordion value="second" toggleIcon="chevron-forward-outline" [readonly]="true">
+  <ion-accordion value="third" toggleIcon="chevron-forward-outline">
     <ion-item slot="header" color="transparent">
-      <button (click)="goTo('/contact')">Contact Us</button>
+      <button (click)="goTo('/about')" translate>leftMenu.aboutus</button>
+    </ion-item>
+  </ion-accordion>
+  <ion-accordion value="second" toggleIcon="chevron-forward-outline">
+    <ion-item slot="header" color="transparent">
+      <button (click)="goTo('/contact')" translate>leftMenu.contactus</button>
     </ion-item>
   </ion-accordion>
   <ion-accordion value="third" toggleIcon="chevron-forward-outline" [readonly]="true">
     <ion-item slot="header" color="transparent">
-      <button (click)="goTo('/about')">About Us</button>
+      <button (click)="goTo('/feedback')" translate>leftMenu.feedback</button>
     </ion-item>
   </ion-accordion>
   <ion-accordion value="third" toggleIcon="chevron-forward-outline" [readonly]="true">
     <ion-item slot="header" color="transparent">
-      <button (click)="goTo('/feedback')">Feedback</button>
+      <button (click)="goTo('/feedback')" translate>leftMenu.share</button>
     </ion-item>
   </ion-accordion>
   <ion-accordion value="forth" toggleIcon="chevron-forward-outline">
     <ion-item slot="header" color="transparent">
-      <button [routerLink]="['/login']">Logout</button>
+      <button [routerLink]="['/login']" translate>leftMenu.logout</button>
     </ion-item>
   </ion-accordion>
 </ion-accordion-group>
