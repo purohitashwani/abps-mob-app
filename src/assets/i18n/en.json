@@ -35,7 +35,11 @@
         "elections": "Elections",
         "sports": "Sports",
         "apply": "Apply",
-        "quizes": "Quizes"
+        "quizes": "Quizes",
+        "nri": "NRI",
+        "psb": "Sell & Buy",
+        "art": "ART",
+        "celb": "Celebrity"
     },
     "header": {
         "languagetitle": "Select Language"

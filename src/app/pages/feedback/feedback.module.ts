@@ -1,12 +1,26 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+//import { FormsModule } from '@angular/forms';
+import { IonicModule } from '@ionic/angular';
+import { RouterModule } from '@angular/router';
+import { FeedbackComponent } from './feedback.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 
 @NgModule({
-  declarations: [],
   imports: [
-    CommonModule
-  ]
+    CommonModule,
+    //FormsModule,
+    IonicModule,
+    TranslateModule,
+    RouterModule.forChild([
+      {
+        path: '',
+        component: FeedbackComponent
+      }
+    ])
+  ],
+  declarations: [FeedbackComponent]
 })
 export class FeedbackModule { }
