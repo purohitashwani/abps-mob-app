@@ -7,8 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MatrimonyListComponent  implements OnInit {
 
+  isGroomBrideActive: string = "Groom";
+
   constructor() { }
 
   ngOnInit() {}
+
+  activeTab(val: any) {
+    this.isGroomBrideActive = val.detail.value
+  }
 
 }

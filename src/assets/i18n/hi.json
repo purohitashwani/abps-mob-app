@@ -23,6 +23,9 @@
     "contactPage": {
         "title": "संपर्क करें"
     },
+    "devotionalPage": {
+        "title": "धार्मिक"
+    },
     "dashboard": {
         "education": "शिक्षा",
         "devotional": "धार्मिक",

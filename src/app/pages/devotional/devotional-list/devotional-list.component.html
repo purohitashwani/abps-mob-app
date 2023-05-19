@@ -1,3 +1,33 @@
-<p>
-  devotional-list works!
-</p>
+<ion-header class="ion-no-border">
+  <ion-buttons slot="start" translate>
+    <ion-back-button defaultHref="dashboard" text=""></ion-back-button>
+    devotionalPage.title
+  </ion-buttons>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="list-container align-center">
+    <div class="ion-activatable ripple-parent" [routerLink]="['/work-in-progress']">
+      <ion-avatar>
+        <img alt="Silhouette of a person's head" src="../../../../assets/images/festival.webp" />
+      </ion-avatar>
+      Pushkarna Festivals
+      <ion-ripple-effect class="custom-ripple"></ion-ripple-effect>
+    </div>
+    <div class="ion-activatable ripple-parent" [routerLink]="['/work-in-progress']">
+      <ion-avatar>
+        <img alt="Silhouette of a person's head" src="../../../../assets/images/festival.webp" />
+      </ion-avatar>
+      Pushkarna Vrat
+      <ion-ripple-effect class="custom-ripple"></ion-ripple-effect>
+    </div>
+    <div class="ion-activatable ripple-parent" [routerLink]="['/work-in-progress']">
+      <ion-avatar>
+        <img alt="Silhouette of a person's head" src="../../../../assets/images/festival.webp" />
+      </ion-avatar>
+      Hindu Months
+      <ion-ripple-effect class="custom-ripple"></ion-ripple-effect>
+    </div>
+  </div>
+</ion-content>
+<!-- <app-footer></app-footer> -->

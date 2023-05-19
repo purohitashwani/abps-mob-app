@@ -5,6 +5,7 @@ import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
 import { DevotionalListComponent } from './devotional-list.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { FooterModule } from 'src/app/components/footer/footer.module';
 
 
 
@@ -14,6 +15,7 @@ import { TranslateModule } from '@ngx-translate/core';
     //FormsModule,
     IonicModule,
     TranslateModule,
+    FooterModule,
     RouterModule.forChild([
       {
         path: '',

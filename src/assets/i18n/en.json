@@ -23,6 +23,9 @@
     "contactPage": {
         "title": "Contact Us"
     },
+    "devotionalPage": {
+        "title": "Devotional"
+    },
     "dashboard": {
         "education": "Education",
         "devotional": "Devotional",

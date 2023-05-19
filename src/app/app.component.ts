@@ -28,7 +28,7 @@ export class AppComponent {
     this.translate.setDefaultLang('hi');
     this.translate.addLangs(['hi','en']);
     this.init();
-    //this.initializeApp();
+    this.initializeApp();
   }
 
 
@@ -47,6 +47,7 @@ export class AppComponent {
       // StatusBar.setOverlaysWebView({ overlay: true });
       // StatusBar.hide();
       StatusBar.setStyle({ style: Style.Default });
+      StatusBar.setBackgroundColor({color:"#fd771d"})
       FacebookLogin.initialize({ appId: '1923687517995492' });
       this.router.navigateByUrl('splash');
     })

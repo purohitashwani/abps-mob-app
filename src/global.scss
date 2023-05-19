@@ -34,6 +34,10 @@
 // @import "~swiper/scss/scrollbar";
 // @import "~swiper/scss/zoom";
 
+// ion-app, body {
+//   --ion-background-color: #ffffff;
+// }
+
 
 .error {
     font-size: 12px;
@@ -104,5 +108,28 @@ ion-spinner {
   ion-footer {
     ion-title {
       font-weight: 500 !important;
+    }
+  }
+
+
+  .matrimoney-searchbar {
+    background:transparent;
+    // .searchbar-input::-webkit-input-placeholder { /* Edge */
+    //     color: red;
+    //   }
+
+    //   .searchbar-input::-ms-input-placeholder { /* Internet Explorer */
+    //     color: red;
+    //   }
+
+      .searchbar-input::placeholder {
+        color: #fff;
+      }
+    .searchbar-search-icon {
+      color: #fff;
+    }
+    .searchbar-clear-icon  {
+      color: #fff;
+      width: 32px;
     }
   }
