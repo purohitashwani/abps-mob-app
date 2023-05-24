@@ -114,6 +114,7 @@ ion-spinner {
 
   .matrimoney-searchbar {
     background:transparent;
+    --background:transparent;
     // .searchbar-input::-webkit-input-placeholder { /* Edge */
     //     color: red;
     //   }
@@ -121,6 +122,11 @@ ion-spinner {
     //   .searchbar-input::-ms-input-placeholder { /* Internet Explorer */
     //     color: red;
     //   }
+
+    .searchbar-input {
+      background: transparent;
+      box-shadow: none;
+    }
 
       .searchbar-input::placeholder {
         color: #fff;

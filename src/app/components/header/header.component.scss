@@ -1,3 +1,12 @@
+ion-header, ion-toolbar {
+  //background: linear-gradient(-45deg, rgba(253,119,29,1), rgba(255,181,2,1), rgba(253,119,29,1), rgba(255,181,2,1));
+ // --background: linear-gradient(-45deg, rgba(253,119,29,1), rgba(255,181,2,1), rgba(253,119,29,1), rgba(255,181,2,1));
+  background: linear-gradient(to top, #ffb502, #ffa603, #ff970b, #ff8714, #fd771d);
+  --background: linear-gradient(to top, #ffb502, #ffa603, #ff970b, #ff8714, #fd771d);
+  color: #fff;
+}
+
+
 
 .header-content {
     display: flex;
@@ -70,4 +79,3 @@ ion-modal#example-modal {
   .logo {
     padding: 10px;
   }
-
